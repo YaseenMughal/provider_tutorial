@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_tutorial/home.dart';
+import 'package:provider_tutorial/provider/auth_provider.dart';
 import 'package:provider_tutorial/provider/count_provider.dart';
 import 'package:provider_tutorial/provider/favourite_provider.dart';
 import 'package:provider_tutorial/provider/slider_provider.dart';
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => SliderProvier()),
           ChangeNotifierProvider(create: (_) => FavouriteProvider()),
           ChangeNotifierProvider(create: (_) => ThemeChangeProvider()),
+          ChangeNotifierProvider(create: (_) => AuthProvider())
         ],
         child: Builder(
           builder: (BuildContext context) {
@@ -30,10 +33,15 @@ class MyApp extends StatelessWidget {
               themeMode: themeChanger.themeMode,
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
-                primarySwatch: Colors.teal,
-              ),
-              darkTheme: ThemeData(brightness: Brightness.dark),
-              home: SplashScreen(),
+                  primarySwatch: Colors.teal,
+                  appBarTheme: AppBarTheme(color: Colors.teal),
+                  iconTheme: IconThemeData(color: Colors.red)),
+              darkTheme: ThemeData(
+                  brightness: Brightness.dark,
+                  primarySwatch: Colors.teal,
+                  appBarTheme: AppBarTheme(color: Colors.red),
+                  iconTheme: IconThemeData(color: Colors.orange)),
+              home: HomeScreen(),
             );
           },
         ));

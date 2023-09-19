@@ -37,6 +37,11 @@ class _ThemeScreenState extends State<ThemeScreen> {
               value: ThemeMode.system,
               groupValue: themeChanger.themeMode,
               onChanged: themeChanger.setTheme),
+          SizedBox(height: 25),
+          Icon(
+            Icons.lock,
+            size: 50.0,
+          )
         ],
       ),
     );

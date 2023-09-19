@@ -106,7 +106,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                                   ? Icons.favorite
                                   : Icons.favorite_outline_outlined,
                               size: 30),
-                          iconColor: Colors.red,
                         ),
                       );
                     },

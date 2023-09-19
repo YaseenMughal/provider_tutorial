@@ -3,8 +3,10 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider_tutorial/screens/count_screen.dart';
 import 'package:provider_tutorial/screens/favourite_screen.dart';
+import 'package:provider_tutorial/screens/login_screen.dart';
 import 'package:provider_tutorial/screens/slider_screen.dart';
 import 'package:provider_tutorial/screens/theme_screen.dart';
+import 'package:provider_tutorial/screens/value_notify.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,29 +24,36 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Provider Tutorial"),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                "Welcome To Provider Tutuorial",
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ),
-              SizedBox(height: 35),
-              button(context, CountScreen(), "Go to Count"),
-              SizedBox(height: 20),
-              button(context, FavouriteScreen(), "Go to Favourite"),
-              SizedBox(height: 20),
-              button(context, SliderScreen(), "Go to Slider"),
-              SizedBox(height: 20),
-              button(context, ThemeScreen(), "Go to ThemeMode"),
-            ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Welcome To Provider Tutuorial",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                SizedBox(height: 35),
+                button(context, LoginScreen(), "Go to Login"),
+                SizedBox(height: 20),
+                button(context, ValueNotifyListenerScreen(),
+                    "Use stateless as in stateful"),
+                SizedBox(height: 20),
+                button(context, ThemeScreen(), "Go to ThemeMode"),
+                SizedBox(height: 20),
+                button(context, SliderScreen(), "Go to Slider"),
+                SizedBox(height: 20),
+                button(context, FavouriteScreen(), "Go to Favourite"),
+                SizedBox(height: 20),
+                button(context, CountScreen(), "Go to Count"),
+              ],
+            ),
           ),
         ),
       ),
